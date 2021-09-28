@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Constructor Injection -->
+    <bean id="employeeId1" class="constructor.injection.model.Employee">
+        <constructor-arg value="Levent"/>
+        <constructor-arg value="Erguder"/>
+        <constructor-arg value="10000"/>
+        <constructor-arg value="1989"/>
+        <constructor-arg value="M"/>
+    </bean>
+
+    <bean id="employeeId2" class="constructor.injection.model.Employee"
+          c:name="Test"
+          c:surname="Test Surname"
+          c:salary="10000"
+          c:birtYear="2000"
+          c:gender="M"
+          c:address-ref="addressId"
+    />
+
+    <bean id="employeeId3" class="constructor.injection.model.Employee">
+        <constructor-arg value="Levent"/>
+        <constructor-arg value="Erguder"/>
+        <constructor-arg value="10000"/>
+        <constructor-arg value="1989"/>
+        <constructor-arg value="M"/>
+        <constructor-arg ref="addressId"/>
+    </bean>
+
+        <bean id="addressId" class="constructor.injection.model.Address">
+            <constructor-arg index="0" value="Diyarbakır"/>
+            <constructor-arg index="1" value="Türkiye"/>
+        </bean>
+
+
+</beans>

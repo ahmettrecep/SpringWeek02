@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="collectionInjectionId" class="collection.injection.model.CollectionInjection">
+        <property name="myList">
+            <list>
+                <value>element1</value>
+                <value>element2</value>
+                <value>element3</value>
+                <value>element4</value>
+            </list>
+        </property>
+
+        <property name="myEmployee">
+            <list>
+                <bean id="employeeId" class="collection.injection.model.Employee">
+                    <property name="name" value="Levent"/>
+                    <property name="surname" value="Ergüder"/>
+                    <property name="birtYear" value="1989"/>
+                    <property name="salary" value="12500"/>
+                    <property name="gender" value="M"/>
+                </bean>
+                <bean id="employeeId2" class="collection.injection.model.Employee">
+                    <property name="name" value="Ahmet Recep"/>
+                    <property name="surname" value="Yan"/>
+                    <property name="birtYear" value="1997"/>
+                    <property name="salary" value="10000"/>
+                    <property name="gender" value="M"/>
+                </bean>
+            </list>
+        </property>
+        <property name="mySet">
+            <list>
+                <value>100</value>
+                <value>200</value>
+                <value>300</value>
+                <value>400</value>
+            </list>
+        </property>
+        <property name="myMap">
+            <map>
+                <entry key="key1">
+                    <value>element1</value>
+                </entry>
+                <entry key="key2">
+                    <value>element2</value>
+                </entry>
+                <entry key="key3">
+                    <value>element3</value>
+                </entry>
+            </map>
+        </property>
+        <property name="myProperties">
+            <props>
+                <prop key="prop1">value1</prop>
+                <prop key="prop2">value2</prop>
+                <prop key="prop3">value3</prop>
+                <prop key="prop4">value4</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
